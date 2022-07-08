@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<title>Henryczkowo MC</title>
+	<link rel="icon" type="image/x-icon" href="./static/server-icon.ico">
+	<meta name="viewport" content="width=1280, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+</head>
+<body class="body">
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<script>
+		// Make a request for a user with a given ID
+		axios.get('https://api.mcstatus.io/v1/status/java/graj.pierwsza-test.ga')
+		.then(function (response) {
+			// handle success
+			//console.log(response);
+
+			//console.log(response.data.host); //graj.pierwsza-test.ga
+			document.getElementById("hostname").innerHTML = response.data.host;
+			document.getElementById("hostname-zone").innerHTML = response.data.host;
+
+			//console.log(response.data.online); //online true
+
+			//console.log(response.data.response.motd.html); // motd
+			document.getElementById("motd-zone").innerHTML = response.data.response.motd.html
+
+			//console.log(response.data.response.players.max); // max graczy
+			console.log(response.data.response.players.online); // online graczy
+			document.getElementById("players").innerHTML = response.data.response.players.online + '<!-- --> / <!-- -->' + response.data.response.players.max
+			document.getElementById("players-zone").innerHTML = response.data.response.players.online + '<!-- --> / <!-- -->' + response.data.response.players.max
+			
+			// remove "purpur" part from version; can be misleading
+			//let gameversion = response.data.response.version.name
+			//gameversion.replace("Purpur","")
+			// doesnt work :(; it displays that it cannot find hostname
+
+			//console.log(response.data.response.version.name); // purpur
+			document.getElementById("version").innerHTML = response.data.response.version.name
+
+
+			//change favicon to correct from mc server
+			//document.getElementById("favicon-zone").src = response.data.response.favicon;
+
+		})
+		.catch(function (error) {
+			// handle error
+			console.log(error);
+			document.getElementById("hostname").innerHTML = "Server jest wyłączony!";
+			document.getElementById("hostname-zone").innerHTML = "Server jest wyłączony!";
+			document.getElementById("hostname").style.color = "red";
+			document.getElementById("hostname-zone").style.color = "red";
+		})
+		.then(function () {
+			// always executed
+		});
+	</script>
+
+	<nav class="navbar navbar-expand-md navbar-light background fixed-top">
+		<a class="navbar-brand" href="#" onclick="smoothScroll('jumbo')">
+			<img src="static/icon.png" alt="Henryk Logo" class="navbar-icon-style">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#" onclick="smoothScroll('jumbo')"><i class="fa fa-home"
+																					aria-hidden="true"></i>
+						Główna</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#about" onclick="smoothScroll('about')"><i class="fa fa-info-circle"
+																						 aria-hidden="true"></i>
+						O serwerze</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#cechy" onclick="smoothScroll('features')"><i class="fas fa-list-alt"
+																							   aria-hidden="true"></i>
+						Cechy</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#status" onclick="smoothScroll('cheats-detected')"><i
+							class="fa fa-address-book" aria-hidden="true"></i>
+						Status</a>
+				</li>
+			</ul>
+	
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="https://tenor.com/search/troll-face-dance-gifs" target="_blank" onclick="return confirm('GITHUB strony będzie zrobiony potem :->.');">
+						<i class="fab fa-github"></i>
+						GitHub
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://tenor.com/search/troll-face-dance-gifs" target="_blank" onclick="return confirm('Serwer discord będzie zrobiony potem :->.');"><i class="fab fa-discord"></i>
+						Discord
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<header id="jumbo">
+		<div class="jumbotron site-section info-jumbotron" style="padding-top: 150px; padding-bottom: 100px">
+			<h1 class="display-4">Henryczkowo</h1>
+			<p class="lead">Henryczkowo-MC to najpopularniejszy serwer bez zasad etycznych</p>
+			<p class="lead">
+				<a class="btn btn-primary btn-lg btn-custom btn-custom-hover" href="#status"
+				   role="button"> <i
+						class="fas fa-crown"></i>  Zobacz IP</a>
+			</p>
+		</div>
+	</header>
+	<header id="about">
+		<div class="container site-section about">
+			<div class="row justify-content-center">
+				<div class="col col-xs-8 col-sm-1 col-md-3 text-center">
+					<h2>O serwerze</h2>
+					<hr>
+				</div>
+			</div>
+			<div class="about-summary">
+				<h4>Co to "Henryczkowo-MC"?</h4>
+				Henryczkowo-MC powstało z myślą o wolności słowa. W grze na serwerze, możesz pisać co chcesz! Na przykład "Uważam, że ... to gorsza rasa" nie poskutkuje banem za obrażanie.
+				<p></p>
+				Jedynym wyjątkiem jest DOX'owanie (tzn. zbierania i publikowania czyichś danych osobowych i prywatnych informacji takich jak: imię, nazwisko, adres, numer telefonu itp. i upublicznianiu ich w celu dręczenia ich.)
+				<p></p>
+				<br>
+				<h4>Dlaczego grać na tym serwerze?</h4>
+				Nasz serwer różni się tym, że nie będzie karał za opinie graczy. Wybudowanie sfastyki na dachu swojego domku nie będzie sądzone.
+				Lecz Cheatowanie tutaj, będzie uważane jak zdrada stanu <i class="fas fa-arrow-alt-circle-right"></i> publiczne powieszenie
+				<p></p>
+			</div>
+		</div>
+	</header>
+	<header id="cechy">
+		<div class="container site-section about">
+			<div class="about-features">
+				<div class="row justify-content-center">
+					<div class="col col-xs-8 col-sm-1 col-md-3 text-center">
+						<h2>Cechy</h2>
+						<hr>
+					</div>
+				</div>
+				<div class="about-features">
+					<h4>Wolność słowa</h4>
+					Kilka razy wspomniana wolność słowa to jest motto serwera, dlatego tak bardzo naciskamy na to. Czat w grze nie będzie sprawdzany.
+					<p></p>
+					<h4>Mapa serwera</h4>
+					Fajne urozmaicenie serwera - Mapa świata. Dostępny overworld, nether i end.
+					<p></p>
+					<h4>Publiczny kod źródłowy do tej strony</h4>
+					Nie każdy serwer postanawia udostępniać swój kod do strony na Githubie. Udostępniając ten kod, pokazujemy, że ufamy wam; naszym graczom
+					<p></p>
+					<h4>Miła administracja</h4>
+					Brzmi to troche jak robienie sobie loda, aleeeeee
+					<p></p>
+					Administracja będzie miała wywalone na graczy, chyba, że dostaniemy reporta [/helpop] od gracza(konfidenta), albo reporta od anticheata.
+					<p></p>
+				</div>
+			</div>
+		</div>
+	</header>
+	<header id="status">
+		<div class="container site-section" style="padding-bottom: 100px">
+			<div class="row justify-content-center">
+				<div class="col col-xs-8 col-sm-4 col-md-3 text-center">
+					<h2>Status serwera</h2>
+					<hr>
+				</div>
+			</div>
+			<div id="preview-zone" class="preview-zone">
+				<img id="servericon" src="./static/server-icon.ico" alt="">
+				<div>
+					<span id="hostname-zone"></span> 
+					<span id="players-zone"></span>
+					
+					<div id="pre-motd-zone">
+						<span id="motd-zone"></span>
+					</div>
+				</div>
+			</div>
+			<div class="box">
+				<table class="table is-fullwidth is-hoverable">
+					<tbody>
+						<tr>
+							<th>Nasze IP</th>
+							<td id="hostname"></td>
+						</tr>
+						<tr>
+							<th>Wersja</th>
+							<td>
+								<pre id="version"></pre>
+							</td>
+						</tr>
+						<tr>
+							<th>Gracze</th>
+							<td>
+								<span id="players"></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</header>
+	<footer class="py-5 background">
+		<div class="container">
+			<div class="footer">
+				Copyright &copy; <script>document.write(new Date().getFullYear())</script> Henryczkowo-MC <br>
+				<a href="https://www.instagram.com/dominikodz/" target="_blank"><img src="https://img.shields.io/badge/Made%20with%20%E2%99%A5%EF%B8%8F%20by-Dominikodz-red?style=for-the-badge" alt=""></a>
+			</div>
+		</div>
+	</footer>
+	<a id="back-to-the-top" href="#" class="btn btn-primary btn-lg back-to-the-top btn-custom-hover" role="button"
+   title="Return to the top"
+   data-toggle="tooltip" data-placement="left"><i class="fas fa-arrow-up"></i> </a>
+
+</body>
+</html>
