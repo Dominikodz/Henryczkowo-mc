@@ -8,7 +8,10 @@ Polish Minecraft server site source.
 
 ## Usage
 
-Basic index.html; just download and open.
+For getting info from minecraft server, it uses [mcstatus.io](https://mcstatus.io/) API. You can change API link to your server
+
+Basic index.html 
+just download, change and open.
 
 ```
 nginx conf will be added soon :)
@@ -22,3 +25,9 @@ Also mobile view is broken; will fix that later
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+> Copyright (c) 2018-2022 Dominikodz
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/mit-license.php) - see the [LICENSE](https://github.com/Xonn1com/Henryczkowo-mc/blob/main/LICENSE) file for details.

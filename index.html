@@ -38,14 +38,14 @@
 			document.getElementById("motd-zone").innerHTML = response.data.response.motd.html
 
 			//console.log(response.data.response.players.max); // max graczy
-			console.log(response.data.response.players.online); // online graczy
+			//console.log(response.data.response.players.online); // online graczy
 			document.getElementById("players").innerHTML = response.data.response.players.online + '<!-- --> / <!-- -->' + response.data.response.players.max
 			document.getElementById("players-zone").innerHTML = response.data.response.players.online + '<!-- --> / <!-- -->' + response.data.response.players.max
 			
 			// remove "purpur" part from version; can be misleading
 			//let gameversion = response.data.response.version.name
 			//gameversion.replace("Purpur","")
-			// doesnt work :(; it displays that it cannot find hostname
+			// doesnt work :(; it displays that cannot find hostname
 
 			//console.log(response.data.response.version.name); // purpur
 			document.getElementById("version").innerHTML = response.data.response.version.name
