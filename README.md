@@ -11,17 +11,28 @@ Polish Minecraft server site source.
 For getting info from minecraft server, it uses [mcstatus.io](https://mcstatus.io/) API. You can change API link to your server
 
 Basic index.html 
-just download, change and open.
+just download and open.
 
+Or you can host it on a dedicated server using nginx:
 ```
-nginx conf will be added soon :)
+server {
+       listen 80;
+       listen [::]:80;
+
+       server_name {YOUR_DOMAIN/IP};
+
+       root /var/www/henryczkowo;
+       index index.html;
+
+       location / {
+               try_files $uri $uri/ =404;
+       }
+}
 ```
 
 ## Warning!
 
 Source might be poorly coded but author is still learning (+ was drunk while coding this).
-
-Also mobile view is broken; will fix that later
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
