@@ -30,6 +30,10 @@ server {
 }
 ```
 
+## MinecraftStats
+
+This site is using [MinecraftStats](https://github.com/pdinklag/MinecraftStats)! You can change the link for your server stats under navbar and about section.
+
 ## Warning!
 
 Source might be poorly coded but author is still learning (+ was drunk while coding this).
