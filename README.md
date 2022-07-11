@@ -30,6 +30,10 @@ server {
 }
 ```
 
+## Dynmap
+
+This site is using [Dynmap](https://github.com/webbukkit/dynmap)! You can change the link for your server dynmap under navbar and about section.
+
 ## MinecraftStats
 
 This site is using [MinecraftStats](https://github.com/pdinklag/MinecraftStats)! You can change the link for your server stats under navbar and about section.
