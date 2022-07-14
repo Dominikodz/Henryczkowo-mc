@@ -1,4 +1,4 @@
-![Hneryczkowo](static/squad.png)
+![Henryczkowo-Logo](static/squad.png)
 
 # Henryczkowo-MC
 
