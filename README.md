@@ -61,7 +61,7 @@ This site is using [MinecraftStats](https://github.com/pdinklag/MinecraftStats)!
 
 ## Warning!
 
-Source might be poorly coded but author is still learning (+ was drunk while coding this).
+Source might be poorly coded but author is still learning.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
