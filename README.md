@@ -1,3 +1,5 @@
+![Hneryczkowo](static/squad.png)
+
 # Henryczkowo-MC
 
 [![Author](https://img.shields.io/badge/Made%20with%20%E2%99%A5%EF%B8%8F%20by-Dominikodz-red?style=for-the-badge)](https://www.instagram.com/dominikodz/)
