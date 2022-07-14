@@ -13,8 +13,28 @@ For getting info from minecraft server, it uses [mcstatus.io](https://mcstatus.i
 Basic index.html 
 just download and open.
 
-Or you can host it on a dedicated server using nginx:
-```
+<details>
+<summary>Python http.server and ngrok server</summary>
+<br>
+This may vary with Linux and Windows method. <br>
+Open 2 admin cmds/terminals. On first, you will have to start python server; Type:
+<pre>
+python -m http.server 80
+</pre>
+Before starting ngrok server, look how to do it, because you will have to upload ngrok token. On the second cmd/terminal, type:
+<pre>
+ngrok.exe http 80
+</pre>
+https://dashboard.ngrok.com/get-started/your-authtoken <br>
+Of course, you can also port forward port 80 to skip ngrok thing, <strong>but for security reasons, it's not recomended for personal use!</strong>
+</details>
+
+<details>
+<summary>Dedicated server and nginx</summary>
+<br>
+This may vary with Linux and Windows method. <br>
+But anyone using VPN and nginx, know how to deal with it.
+<pre>
 server {
        listen 80;
        listen [::]:80;
@@ -28,7 +48,8 @@ server {
                try_files $uri $uri/ =404;
        }
 }
-```
+</pre>
+</details>
 
 ## Dynmap
 
