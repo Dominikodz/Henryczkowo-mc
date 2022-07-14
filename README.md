@@ -1,3 +1,6 @@
+### Project discontinued ; Look : 
+https://github.com/Dominikodz/ZyletkaMC
+
 ![Henryczkowo-Logo](static/squad.png)
 
 # Henryczkowo-MC
